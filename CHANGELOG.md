@@ -1,5 +1,10 @@
 # Changelog
 
+## [Unreleased]
+
+### Planned
+- Extension icon (shipping without one in v0.1.0; marketplace will show the default).
+
 ## [0.1.0] - 2026-04-23
 
 ### Added

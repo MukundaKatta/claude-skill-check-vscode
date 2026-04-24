@@ -27,7 +27,6 @@
     "yaml-frontmatter"
   ],
   "categories": ["Linters", "Other"],
-  "icon": "icon.png",
   "engines": {
     "vscode": "^1.85.0",
     "node": ">=18"
