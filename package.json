@@ -1,0 +1,74 @@
+{
+  "name": "claude-skill-check-vscode",
+  "displayName": "Claude Skill Check",
+  "description": "Lint Claude Code SKILL.md files inside VS Code. Highlights frontmatter issues, missing required fields, description-length problems, and leaked secrets.",
+  "version": "0.1.0",
+  "publisher": "mukundakatta",
+  "author": {
+    "name": "Mukunda Katta",
+    "email": "mukundkst@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MukundaKatta/claude-skill-check-vscode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MukundaKatta/claude-skill-check-vscode/issues"
+  },
+  "homepage": "https://github.com/MukundaKatta/claude-skill-check-vscode#readme",
+  "keywords": [
+    "claude",
+    "claude-code",
+    "skill",
+    "linter",
+    "anthropic",
+    "markdown",
+    "yaml-frontmatter"
+  ],
+  "categories": ["Linters", "Other"],
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.85.0",
+    "node": ">=18"
+  },
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Claude Skill Check",
+      "properties": {
+        "claudeSkillCheck.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable Claude Skill Check diagnostics."
+        },
+        "claudeSkillCheck.fileGlob": {
+          "type": "string",
+          "default": "**/SKILL.md",
+          "description": "Glob pattern for files to lint. Default matches SKILL.md files anywhere in the workspace."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "claudeSkillCheck.runOnActiveFile",
+        "title": "Claude Skill Check: Lint Active File"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.0.0",
+    "typescript": "^5.7.0"
+  }
+}
